@@ -24,7 +24,7 @@ RSpec.feature "SortProducts", type: :feature do
     expect(current_url).to eq root_url(sort: "alphabetical") # TODO: make sure your link submits to the correct URL
 
     # test that hat names are in the right order now
-    expect(hat_links).to eq # ... TODO: fill it out
+    expect(hat_links).to eq ["Adam's Hat", "Brad's Hat"]
   end
 
 end
