@@ -14,6 +14,14 @@ class Product < ActiveRecord::Base
     end
   end
 
+  def disccount_saleoff
+    get_saleoff_percentage * price_vnd
+  end
+
+  def price_after_saleoff
+    price_vnd - disccount_saleoff
+  end
+
   def get_saleoff_percentage
     percentage_sale = 0
 
