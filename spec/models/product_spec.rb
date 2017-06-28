@@ -20,4 +20,13 @@ RSpec.describe Product, type: :model do
       expect(Product.alphabetical).to eq [c, b, a]
     end
   end
+
+  describe ".discount mount on sale" do
+    it "return final price after I create product with discount price" do
+      prd = Product.create(name: "a", price_vnd: 120000)
+
+      expect()
+    end
+
+  end
 end
