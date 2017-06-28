@@ -1,8 +1,12 @@
 require 'rails_helper'
 
 RSpec.feature "SortProducts", type: :feature do
+<<<<<<< HEAD
+  
+=======
   # pending "add some scenarios (or delete) #{__FILE__}"
   # http://www.rubydoc.info/github/jnicklas/capybara/master/Capybara/Node/Element
+>>>>>>> 0e4268beb7f22d318eeb9dfe4042167d41b2933a
   def hat_links
     page.all(:css, "h4.product-name a").map(&:text)
   end
@@ -10,7 +14,10 @@ RSpec.feature "SortProducts", type: :feature do
   scenario "visit clicks on Sort by Alphabetical" do
     product1 = FactoryGirl.create(:product, name: "Brad's Hat") # similar to Product.create, but with some default values
     # TODO: create another product with "Adam's Hat" name
+<<<<<<< HEAD
+=======
     product2 = FactoryGirl.create(:product, name: "Adam's Hat")
+>>>>>>> 0e4268beb7f22d318eeb9dfe4042167d41b2933a
 
     visit root_path
 
@@ -27,4 +34,9 @@ RSpec.feature "SortProducts", type: :feature do
     expect(hat_links).to eq ["Adam's Hat", "Brad's Hat"]
   end
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 0e4268beb7f22d318eeb9dfe4042167d41b2933a
 end
