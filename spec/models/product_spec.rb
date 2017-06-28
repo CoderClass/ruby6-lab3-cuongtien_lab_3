@@ -23,9 +23,9 @@ RSpec.describe Product, type: :model do
 
   describe ".discount mount on sale" do
     it "return final price after I create product with discount price" do
-      prd = Product.create(name: "a", price_vnd: 120000)
+      prd = Product.create(name: "a", price_vnd: 100000)
 
-      expect()
+      expect(prd.price_after_saleoff).to eq(79000)
     end
 
   end

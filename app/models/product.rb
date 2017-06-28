@@ -2,11 +2,6 @@ class Product < ActiveRecord::Base
   before_save :set_default_image_path
   validates :name, presence: true
 
-  private
-
-  def set_default_image_path
-    self.image_path ||= "http://lorempixel.com/200/200/fashion"
-  end
 
   class << self
     def alphabetical
@@ -15,8 +10,9 @@ class Product < ActiveRecord::Base
   end
 
   def disccount_saleoff
-    get_saleoff_percentage * price_vnd
+    self.get_saleoff_percentage * price_vnd
   end
+
 
   def price_after_saleoff
     price_vnd - disccount_saleoff
@@ -36,4 +32,9 @@ class Product < ActiveRecord::Base
     percentage_sale
   end
 
+  private
+
+  def set_default_image_path
+    self.image_path ||= "http://lorempixel.com/200/200/fashion"
+  end
 end
