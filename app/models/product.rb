@@ -12,9 +12,5 @@ class Product < ActiveRecord::Base
     def alphabetical
       order("name ASC")
     end
-
-    def discount_amount
-      
-    end
   end
 end
