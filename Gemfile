@@ -24,6 +24,7 @@ gem 'pg'
 gem 'slim-rails'
 group :development do
   # gem 'rails_layout'
+  gem 'guard-rspec', require: false
   gem 'spring-commands-rspec'
 end
 group :development, :test do
