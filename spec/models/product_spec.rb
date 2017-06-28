@@ -8,12 +8,16 @@ RSpec.describe Product, type: :model do
     end
 
     it 'returns [a] when there is only one product a' do
-      a = Product.create!(name: "")
+      a = Product.create!(name: "a")
       expect(Product.alphabetical).to eq [a]
     end
 
     it 'returns [a, b, c] after I create three products c, b, a' do
+      a = Product.create!(name: "c")
+      b = Product.create!(name: "b")
+      c = Product.create!(name: "a")
 
+      expect(Product.alphabetical).to eq [c, b, a]
     end
   end
 end
