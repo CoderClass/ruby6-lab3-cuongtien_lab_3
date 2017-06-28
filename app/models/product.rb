@@ -13,4 +13,19 @@ class Product < ActiveRecord::Base
       order("name ASC")
     end
   end
+
+  def get_saleoff_percentage
+    percentage_sale = 0
+
+    if price_vnd >= 100000
+      percentage_sale = 0.21
+    elsif price_vnd > 200000
+      percentage_sale = 0.31
+    elsif price_vnd > 800000
+      percentage_sale = 0.41
+    end
+
+    percentage_sale
+  end
+
 end
